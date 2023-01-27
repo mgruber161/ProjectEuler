@@ -1,7 +1,7 @@
 ﻿int count = 0;
-for (int a = 2; a < 16; a++)
-	for (int b = 2; b < 16; b++)
-		for (int c = 2; c < 16; c++)
+for (int a = 2; a < 31; a++)
+	for (int b = 2; b < 31; b++)
+		for (int c = 2; c < 31; c++)
             if(30 % a == 0 && 30 % b == 0 && 30 % c == 0)
                 if(IsPrime(GCD(a,b)) && IsPrime(GCD(b, c)))
                 {
