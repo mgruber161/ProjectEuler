@@ -2,7 +2,7 @@
 {
     public class EulerHelper
     {
-        public bool IsPrime(int number)
+        public static bool IsPrime(long number)
         {
             if (number <= 1) return false;
             if (number == 2) return true;
@@ -13,11 +13,36 @@
                     return false;
             return true;
         }
-        public int GCD(int a, int b) => b == 0 ? a : GCD(b, a % b);
-        public int CrossProduct(int n)
+        public static int GCD(int a, int b) => b == 0 ? a : GCD(b, a % b);
+        public static int CrossProduct(int n)
         {
             if (n == 0) return 1;
             return (n % 10) * CrossProduct(n / 10);
+        }
+        public static long[] GetDivisors(long n)
+        {
+            List<long> divisors = new List<long>();
+            if (n < 1) return new long[] { };
+            else
+                for (long i = 1; i < n; i++)
+                    if (n % i == 0)
+                        divisors.Add(i);
+            return divisors.ToArray();
+        }
+
+        public static int GetDivisorCount(long n)
+        {
+            int result = 1;
+            if (n % 2 == 0)
+                result++;
+            for (int i = 1; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                {
+                    result++;
+                }
+            }
+            return result;
         }
     }
 }
