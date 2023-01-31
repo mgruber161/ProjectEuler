@@ -44,5 +44,12 @@
             }
             return result;
         }
+        public static long Factorial(long number)
+        {
+            long result = 1;
+            for (long i = number; i > 0; i--)
+                result *= i;
+            return result;
+        }
     }
 }
