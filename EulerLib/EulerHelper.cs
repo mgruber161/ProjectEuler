@@ -51,5 +51,15 @@
                 result *= i;
             return result;
         }
+
+        public static int[] GetDivisors(int n)
+        {
+            List<int> divisors = new List<int>();
+            divisors.Add(1);
+            for (int i = 2; i <= n / 2; i++)
+                if (n % i == 0)
+                    divisors.Add(i);
+            return divisors.ToArray();
+        }
     }
 }
