@@ -8,12 +8,7 @@ namespace EulerLib
 {
     public static class intExt
     {
-        public static bool IsAbundant(this int i)
-        {
-            if (i.DivisorSum() > i)
-                return true;
-            return false;
-        }
+        public static bool IsAbundant(this int i) => i.DivisorSum() > i;
 
         public static int DivisorSum(this int n)
         {
