@@ -67,5 +67,18 @@
             if (length == 1) return list.Select(t => new T[] { t });
             return GetPermutations(list, length - 1).SelectMany(t => list.Where(e => !t.Contains(e)), (t1, t2) => t1.Concat(new T[] { t2 }));
         }
+
+        public static bool IsPandigital(int n)
+        {
+            int digits = 0; int count = 0; int tmp;
+
+            for (; n > 0; n /= 10, ++count)
+            {
+                if ((tmp = digits) == (digits |= 1 << (n - ((n / 10) * 10) - 1)))
+                    return false;
+            }
+
+            return digits == (1 << count) - 1;
+        }
     }
 }
